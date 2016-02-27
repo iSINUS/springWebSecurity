@@ -28,7 +28,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.ldapAuthentication()
-                .userDnPatterns("uid={0},ou=users,ou=system")
-                .contextSource().url("ldap://miniserver:10389/");
+                .userDnPatterns("cn={0},ou=users,dc=sinus,dc=com")
+                .contextSource().url("ldap://miniserver:389/");
     }
 }
